@@ -4,7 +4,7 @@ import menu from '../../img/menu.png';
 import verify from '../../img/verify.png';
 import star from '../../img/star.png';
 
-import { MenuSection, MenuWrapper } from './Menu.styled';
+import { Button, ButtonContainer, MenuSection, MenuWrapper, ReversedGradientText, ReversedStarImg, ReversedUserInfo, ReversedUserWrapper } from './Menu.styled';
 import { StarImg } from './Menu.styled';
 import { AvatarWrapper } from './Menu.styled';
 import { UserWrapper } from './Menu.styled';
@@ -14,7 +14,7 @@ import { GradientText } from './Menu.styled';
 import { UserInfo } from './Menu.styled';
 
 export const Menu = () => {
-  const [isReverse, setIsReverse] = useState(false);
+  const [isReverse, setIsReverse] = useState(true);
   const handleReverse = () => {
     setIsReverse(prev => !prev);
   };
@@ -51,8 +51,8 @@ export const Menu = () => {
           <MenuWrapper>
             <img src={menu} alt="menu_btn" />
           </MenuWrapper>
-          <UserWrapper>
-            <UserInfo>
+          <ReversedUserWrapper>
+            <ReversedUserInfo>
               <UserNameWrapper>
                 {' '}
                 <h2>Anna Effective</h2>
@@ -64,17 +64,20 @@ export const Menu = () => {
                 />{' '}
               </UserNameWrapper>
               <UserText>Double your income with me!</UserText>
-            </UserInfo>
-            <GradientText>4881</GradientText>
-          </UserWrapper>
+            </ReversedUserInfo>
+            <ReversedGradientText>4881</ReversedGradientText>
+          </ReversedUserWrapper>
 
           <AvatarWrapper>
             <img src={eclipse} alt="avatar" />
-            <StarImg src={star} alt="star" />
+            <ReversedStarImg src={star} alt="star" />
           </AvatarWrapper>
+          
         </MenuSection>
+        
       )}
-      <button onClick={handleReverse}> reverse</button>
+      <ButtonContainer><Button onClick={handleReverse}> reverse</Button></ButtonContainer>
+      
     </>
   );
 };
